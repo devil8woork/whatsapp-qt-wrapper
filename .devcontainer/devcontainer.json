@@ -1,9 +1,13 @@
 {
     "name": "Qt WebEngine Dev",
-    "image": "mcr.microsoft.com/devcontainers/universal:2",
+    "build": { "dockerfile": "Dockerfile" },
     "features": {
         "ghcr.io/devcontainers/features/desktop-lite:1": {} 
     },
     "forwardPorts": [6080],
-    "postCreateCommand": "sudo apt-get update && sudo apt-get install -y qt6-webengine-dev libqt6webenginewidgets6"
+    "customizations": {
+        "vscode": {
+            "extensions": ["ms-vscode.cpptools", "ms-vscode.cmake-tools"]
+        }
+    }
 }
